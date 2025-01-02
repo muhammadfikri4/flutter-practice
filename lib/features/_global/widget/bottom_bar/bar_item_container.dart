@@ -10,15 +10,17 @@ class BarItemContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final String location = GoRouterState.of(context).uri.toString();
     return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: menusConfig.map((item) {
-          return BottomBarItem(
-            icon: IconProps(icon: item['icon'], size: 28),
-            label: item['label'],
-            onTap: () => context.go(item['route']),
-            isActive: item['route'] == location,
-          );
-        }).toList());
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: List.generate(menusConfig.length, (index) {
+        final item = menusConfig[index];
+        return BottomBarItem(
+          icon: IconProps(icon: item['icon'], size: 28),
+          label: item['label'],
+          onTap: () => context.go(item['route']),
+          isActive: item['route'] == location,
+        );
+      }),
+    );
   }
 }
