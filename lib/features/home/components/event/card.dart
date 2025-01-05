@@ -26,11 +26,11 @@ class EventState extends State<EventCard> {
         decoration: const BoxDecoration(
           boxShadow: <BoxShadow>[
             BoxShadow(
-                color: Color.from(alpha: 0.3, red: 0, green: 0, blue: 0),
+                color: Color.from(alpha: 0.09, red: 0, green: 0, blue: 0),
                 blurStyle: BlurStyle.normal,
-                blurRadius: 5,
+                blurRadius: 8,
                 offset: Offset(0, 0),
-                spreadRadius: 0.5)
+                spreadRadius: 0.05)
           ],
           borderRadius: BorderRadius.all(
             Radius.circular(10),
@@ -48,7 +48,7 @@ class EventState extends State<EventCard> {
             Container(
               alignment: Alignment.centerLeft,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start, // Atur ke kiri
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     widget.title,

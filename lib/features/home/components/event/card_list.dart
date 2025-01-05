@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/features/home/components/event/card.dart';
+import 'package:flutter_practice/features/home/components/title_redirect.dart';
 
 class EventCardList extends StatelessWidget {
   const EventCardList({super.key});
@@ -8,36 +9,21 @@ class EventCardList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 14),
-      child: Column(
+      child: const Column(
         spacing: 10,
         children: [
-          Container(
-            padding: const EdgeInsets.only(right: 20),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Upcoming Event',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          TitleRedirect(
+            title: 'Upcoming Events',
+            action: ActionButton(
+                title: 'See All',
+                icon: Icon(
+                  Icons.arrow_right_sharp,
+                  color: Colors.grey,
+                  size: 24,
                 ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'See All',
-                      style: TextStyle(color: Colors.grey, fontSize: 14),
-                    ),
-                    Icon(
-                      Icons.arrow_right_sharp,
-                      color: Colors.grey,
-                      size: 24,
-                    )
-                  ],
-                )
-              ],
-            ),
+                to: '/'),
           ),
-          const SingleChildScrollView(
+          SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               spacing: 4,
