@@ -51,7 +51,7 @@ class FilterSection extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(3),
                   decoration: const BoxDecoration(
-                    color: Color.fromRGBO(162, 158, 240, 1),
+                    color: Colors.white,
                     borderRadius: BorderRadius.all(
                       Radius.circular(20),
                     ),
